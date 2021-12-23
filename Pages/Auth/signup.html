@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="icon" href="./../../Images/fav.png">
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./../../CSS/main.css">
+    <link rel="stylesheet" href="./../../CSS/signup.css">
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script src="./../../JS/main.js"></script>
+</head>
+<body>
+<div class="container">
+<div class="_container2">
+    <div class="mb-3">
+        <label for="fName" class="form-label _RobotoRegular">First Name</label>
+        <input type="text" class="form-control _RobotoRegular" id="fName">
+    </div>
+    <div class="mb-3">
+        <label for="Lname" class="form-label _RobotoRegular">Last Name</label>
+        <input type="text" class="form-control _RobotoRegular" id="lName">
+    </div>
+    <div class="mb-3">
+        <label for="Mnumb" class="form-label _RobotoRegular">Mobile Number</label>
+        <input type="number" class="form-control _RobotoRegular" id="Mnumb">
+    </div>
+    <div class="mb-3">
+        <label for="Email" class="form-label _RobotoRegular">Email address</label>
+        <input type="email" class="form-control _RobotoRegular" id="Email" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="Password" class="form-label _RobotoRegular">Password</label>
+        <input type="password" class="form-control _RobotoRegular" id="Password">
+    </div>
+    <div class="mb-3">
+    <label class="form-label _RobotoRegular">Select Gender</label>
+    <div class="_radio_main">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="Gender" id="Male">
+            <label class="form-check-label" for="Male">
+                Male
+            </label>
+            </div>
+            <div class="form-check" id="_Female">
+            <input class="form-check-input" type="radio" name="Gender" id="Female">
+            <label class="form-check-label" for="Female">
+                Female
+            </label>
+            </div>
+        </div>
+    </div>
+    <div class="d-grid gap-2">
+        <button class="btn btn-primary _RobotoBold" onclick="signup()" class="_btn1" type="button">Sign Up</button>
+    </div>
+    <div class="_notamember">
+        <p class="_RobotoRegular _not_m">Already a member? &nbsp;<a class="_RobotoBold" href="./login.html">Login In</a></p>
+    </div>
+</div>
+<div id="error_main" class="error_message" style="display: none;">
+    <p id="error_show"></p>
+</div>
+</div>
+</body>
+<script src="./../../JS/Auth/Signup.js"></script>
+</html>

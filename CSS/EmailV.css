@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#_EmailIcon{
+    width: 250px;
+    height: 250px;
+    display: flex;
+    margin: 0 auto;
+}
+._heading1{
+    color: green;
+    text-align: center;
+    margin: 20px 0px 4px 0px;
+}
+._heading2{
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+._verify{
+    font-size: 30px;
+    text-align: center;
+}
+.btn{
+    width: 45%;
+}
+#_btnmain{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
