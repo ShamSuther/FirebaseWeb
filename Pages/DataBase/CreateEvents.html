@@ -15,6 +15,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./../../CSS/main.css">
     <link rel="stylesheet" href="./../../CSS/CreateEvent.css">
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
+    <script src="./../../JS/main.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -73,6 +78,11 @@
                 <button class="btn btn-primary _RobotoBold" class="_btn1" type="button">Create Event</button>
             </div>
         </div>
+        <!-- error -->
+        <div id="error_main" class=" error_message" style="display: none;">
+          <p id="error_show"></p>
+        </div>
         </div>
 </body>
+<script src="./../../JS/Database/CreateEvents.js"></script>
 </html>

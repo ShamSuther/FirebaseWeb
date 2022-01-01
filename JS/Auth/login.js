@@ -27,20 +27,16 @@ Login = () => {
         }
         firebase.auth().signInWithEmailAndPassword(Data1.Email, Data1.pass1)
         .then((Result) =>{
-            console.log(Result.user);
             errorM.style.display = "block";
-            error.setAttribute("class","_success");
+            error.setAttribute("id","_success");
             error.innerHTML = "Login Successfull!!!"
-            if(Result.emailVerified){
-                console.log("emailVerified-true")
-                window.location.assign("./../DataBase/Home.html");
+            if(Result.user.emailVerified){
                 setTimeout(()=>{
                     window.location.assign("./../DataBase/Home.html");
                 },3000)
             } else{
-                console.log("emailverified_false")
                 setTimeout(()=>{
-                    window.location.assign("./../../Pages/DataBase/EmailV.html");
+                    window.location.assign("./EmailV.html");
                 },3000)
                 
             }
@@ -67,7 +63,7 @@ forgot_password = () => {
         }, 3000);
     } else{
     firebase.auth().sendPasswordResetEmail(forgotPass.value)
-    .then((user5)=>{
+    .then(()=>{
         errorM2.style.display = "block";
         errorP.setAttribute("id","_success");
         errorP.innerHTML = "no thanks";

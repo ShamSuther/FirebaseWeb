@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./../../CSS/main.css">
     <link rel="stylesheet" href="./../../CSS/home.css">
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
+    <script src="./../../JS/main.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -41,5 +46,11 @@
           </form>
         </div>
       </nav>
+      <div class="container">
+        <div id="error_main" class=" error_message" style="display: none;">
+          <p id="error_show"></p>
+        </div>
+      </div>
 </body>
+<script src="./../../JS/Database/MyEvents.js"></script>
 </html>
