@@ -1,6 +1,12 @@
 .form-floating{
     margin-bottom: 16px;
 }
+.container{
+    height: 130vh !important;
+}
 .btn{
     width: 100%;
+}
+#eventDes{
+    padding: 6px 12px;
 }

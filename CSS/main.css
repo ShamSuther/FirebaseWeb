@@ -63,10 +63,9 @@ body{
 }
 #error_main{
     position: absolute;
-    bottom: 20px;
+    bottom: 0;
     width: auto;
     max-width: 90%;
-    height: auto;
 }
 #error_show{
     font-family: Roboto-Bold;
@@ -74,7 +73,7 @@ body{
     color: #842029;
     padding: 10px 20px;
     border-radius: 10px;
-    text-align: center;
+    text-align: bottom;
 }
 #_success{
     font-family: Roboto-Bold;
@@ -82,7 +81,7 @@ body{
     color: #238420;
     padding: 10px 20px;
     border-radius: 10px;
-    text-align: center;
+    text-align: bottom;
 }
 #_error_p{
     flex-direction: column;
@@ -90,5 +89,8 @@ body{
     max-width: 100%;
     height: auto;
     margin: auto;
+}
+nav{
+    border: 1px solid rgba(0,0,0,.125);
 }
 

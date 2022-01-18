@@ -19,6 +19,7 @@
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-storage.js"></script>
     <script src="./../../JS/main.js"></script>
 </head>
 <body>
@@ -43,7 +44,7 @@
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <button class="btn btn-primary _RobotoBold" class="_btn1" type="button">Log Out</button>
+            <button class="btn btn-primary _RobotoBold" class="_btn1" onclick="signout()" type="button">Log Out</button>
           </form>
         </div>
       </nav>
@@ -51,31 +52,32 @@
       <div class="container">
         <div class="_container2">
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label _RobotoRegular">Event Name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="_eventname" class="form-label _RobotoRegular">Event Name</label>
+                <input type="text" class="form-control" id="_eventname" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label _RobotoRegular">Event Time</label>
-                <input type="time" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="_eventTime" class="form-label _RobotoRegular">Event Time</label>
+                <input type="time" class="form-control" id="_eventTime" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label _RobotoRegular">Event Date</label>
-                <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="_eventDate" class="form-label _RobotoRegular">Event Date</label>
+                <input type="date" class="form-control" id="_eventDate" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label _RobotoRegular">Event Price</label>
-                <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="_eventPrice" class="form-label _RobotoRegular">Event Price</label>
+                <input type="number" class="form-control" id="_eventPrice" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-                <label for="formFile" class="form-label font_F_Roboto_R">Event Image</label>
-                <input class="form-control" type="file" id="eventImage" onchange="eventImage(event)">
+              <label for="_eventImage" class="form-label font_F_Roboto_R">Event Image</label>
+              <input class="form-control" type="file" id="_eventImage" onchange="uploadImg(event)">
+              <label class="form-label font_F_Roboto_R" id="_progress" style="display: none;"></label>
               </div>
+            <label class="_RobotoRegular" for="eventDes">Event Description</label>
             <div class="form-floating">
-                <label class="_RobotoRegular" for="floatingTextarea2">Event Des...</label>
                 <textarea class="form-control" placeholder="Leave a comment here" id="eventDes" style="height: 100px"></textarea>
               </div>
             <div class="d-grid gap-2">
-                <button class="btn btn-primary _RobotoBold" class="_btn1" type="button">Create Event</button>
+                <button class="btn btn-primary _RobotoBold" type="button" onclick="createEvents()">Create Event</button>
             </div>
         </div>
         <!-- error -->

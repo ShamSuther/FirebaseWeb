@@ -9,13 +9,14 @@ firebase.auth().onAuthStateChanged((userCheck) => {
     firebase.auth().currentUser.sendEmailVerification();
     if (CurrentUser) {
         if (userCheck.emailVerified === true) {
+            errormain.style.display = "block";
             errorshow.innerHTML = "Your email has been verified";
             errorshow.style.display = "block";
-            errormain.setAttribute("id", "_success");
+            errorshow.setAttribute("id", "_success");
             setTimeout(() => {
                 errormain.style.display = "none";
                 window.location.href = "./../DataBase/home.html"
-            }, 5000)
+            }, 3000)
         }
     } else {
         errormain.style.display = "block";
@@ -37,6 +38,7 @@ firebase.auth().onAuthStateChanged((userCheck) => {
 })
 function reSendEmail() {
     var activeUser = firebase.auth().currentUser;
+    activeUser.sendEmailVerification();
     errorshow.innerHTML = "Email Resent!";
     errormain.style.display = "block";
     errorshow.setAttribute("id", "_success");

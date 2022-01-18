@@ -13,11 +13,12 @@
     <!-- bootstrap css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./../../CSS/main.css">
-    <link rel="stylesheet" href="./../../CSS/home.css">
+    <link rel="stylesheet" href="./../../CSS/Myevents.css">
     <!-- firebase -->
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-storage.js"></script>
     <script src="./../../JS/main.js"></script>
 </head>
 <body>
@@ -42,15 +43,35 @@
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <button class="btn btn-primary _RobotoBold" class="_btn1" type="button">Log Out</button>
+            <button class="btn btn-primary _RobotoBold" onclick="signout()" class="_btn1" type="button">Log Out</button>
           </form>
         </div>
       </nav>
-      <div class="container">
+
+      <!-- nav end -->
+
+      <div class="container-fluid">
+        <div id="_cardmain" class="row">
+        </div>
         <div id="error_main" class=" error_message" style="display: none;">
           <p id="error_show"></p>
         </div>
+        <div id="_noevents" class="_RobotoBold" style="display: none;"></div>
       </div>
+
+      <!-- popup -->
+      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body _RobotoRegular" id="_popup">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary _RobotoBold" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- error show -->
 </body>
 <script src="./../../JS/Database/MyEvents.js"></script>
 </html>

@@ -19,12 +19,16 @@
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-storage.js"></script>
     <script src="./../../JS/main.js"></script>
 </head>
 <body>
+
+    <!-- navbar start -->
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand _RobotoBold" href="#">Sham</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button id="toggle" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -43,69 +47,72 @@
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <button class="btn btn-primary _RobotoBold" class="_btn1" type="button">Log Out</button>
+            <button class="btn btn-primary _RobotoBold" class="_btn1" onclick="signout()" type="button">Log Out</button>
           </form>
         </div>
       </nav>
 
+      <!-- navbar end -->
+      <!-- profile information -->
+
       <div class="container">
         <div class="_container2">
-            <div class="avatar-upload">
+            <div class="avatar-upload mb-3">
                 <div class="avatar-edit">
-                    <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                    <input type='file' id="imageUpload" onchange="profileImg(event)" accept=".png, .jpg, .jpeg" />
                     <label for="imageUpload"></label>
                 </div>
                 <div class="avatar-preview">
-                    <div id="imagePreview" style="background-image: url(./../../Images/user.png);">
+                    <div id="imagePreview">
                     </div>
                 </div>
             </div>
+            <label id="_progress" style="display: none;"></label>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label _RobotoRegular">Fist Name</label>
-                <input type="text" class="form-control _RobotoRegular" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="text" class="form-control _RobotoRegular" id="_fnameshow" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label _RobotoRegular">Last Name</label>
-                <input type="text" class="form-control _RobotoRegular" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="text" class="form-control _RobotoRegular" id="_lname_show" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label _RobotoRegular">Mobile Number</label>
-                <input type="number" class="form-control _RobotoRegular" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="number" class="form-control _RobotoRegular" id="_Mnumb_show" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label _RobotoRegular">Email</label>
-                <input type="email" disabled="" class="form-control _RobotoRegular" id="email" value="nothing@gmail.com">
+                <input type="email" disabled class="form-control _RobotoRegular" id="_email_show">
             </div>
             <div class="mb-3">
                 <label class="form-label _RobotoRegular">Select Gender</label>
                 <div class="_radio_main">
                     <div class="form-check">
-                        <input class="form-check-input _RobotoRegular" value="Male" type="radio" name="gender" id="Male">
-                        <label class="form-check-label" for="Male">
+                        <input class="form-check-input _RobotoRegular" value="Male" type="radio" name="_gender2" id="Male">
+                        <label class="form-check-label _RobotoRegular" for="Male">
                             Male
                         </label>
                         </div>
                         <div class="form-check" id="_Female">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="Female">
-                        <label class="form-check-label" for="Female">
+                        <input class="form-check-input" type="radio" value="Female" type="radio" name="_gender2" id="Female">
+                        <label class="form-check-label _RobotoRegular" for="Female">
                             Female
                         </label>
                         </div>
                     </div>
-                </div>
+            </div>
             <div class="form-floating">
-                <label class="_RobotoRegular" for="floatingTextarea2">Event Des...</label>
-                <textarea class="form-control _RobotoRegular" placeholder="Leave a comment here" id="eventDes" style="height: 100px"></textarea>
-              </div>
+                <textarea class="form-control _RobotoRegular" aria-placeholder="comments" placeholder="Leave a comment here" id="eventDes" style="height: 100px"></textarea>
+                <label for="floatingTextarea2" class="_RobotoRegular">Comments</label>
+            </div>
             <div class="d-grid gap-2">
-                <button class="btn btn-primary _RobotoBold" class="_btn1" type="button">Create Event</button>
+                <button class="btn btn-primary _RobotoBold" onclick="updateProfile()" class="_btn1" type="button">Update Profile</button>
+            </div>
             </div>
             <!-- error -->
-        </div>
-            <!-- error -->
-        <div id="error_main" class=" error_message" style="display: none;">
-              <p id="error_show"></p>
-        </div>
+            <div id="error_main" class=" error_message" style="display: none;">
+                <p id="error_show"></p>
+            </div>
         </div>
 </body>
 <script src="./../../JS/Database/Profile.js"></script>
