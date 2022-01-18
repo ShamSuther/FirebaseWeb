@@ -67,12 +67,6 @@ firebase.auth().onAuthStateChanged((user) => {
         }, 3000)
     }
 });
-//profileimage
-firebase.firestore().collection("EventData").doc()
-    .get().then((eve) => {
-        console.log(eve);
-
-    })
 
 var imgpath;
 let profileImg = (e) => {
